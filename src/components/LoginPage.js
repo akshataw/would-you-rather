@@ -45,6 +45,12 @@ class LoginPage extends React.Component{
       }
     })
 
+    if(auth !== null){
+        return(
+          <Redirect to='/me' />
+        )
+      }
+
     if(!found){
       this.setState({
         userNotFound: true
@@ -55,13 +61,12 @@ class LoginPage extends React.Component{
   render(){
     const { login, redirect, userNotFound } = this.state
     const { auth } = this.props
-    const { isLoggedIn } = this.setState
-    if(auth !== null){
-      return(
-        <Redirect to={ this.props.location.state.referrer } />
-      )
-    }
 
+    if(auth !== null){
+        return(
+          <Redirect to={ this.props.location.state.referrer } />
+        )
+      }
     return(
       <div className="container">
         <h2 className="login-page">Login Page</h2>

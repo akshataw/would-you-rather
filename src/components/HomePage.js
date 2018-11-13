@@ -32,12 +32,7 @@ class HomePage extends React.Component{
     const { answered, unanswered, auth, user, question } = this.props
     const { answeredQues } = this.state
     console.log(window.location.origin.toString())
-    if(auth){
-      return(
-        <Redirect
-        to='/me' />
-      )
-    }else{
+    if(auth === null){
       return(
         <Redirect to={{
           pathname: '/loginpage',

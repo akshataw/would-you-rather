@@ -15,12 +15,7 @@ class MyQuestions extends React.Component{
   render(){
     const { questions, user, auth } = this.props
 
-    if(auth){
-      return(
-        <Redirect
-        to='/myQuestion' />
-      )
-    }else{
+    if(auth === null){
       return(
         <Redirect to={{
           pathname: '/loginpage',

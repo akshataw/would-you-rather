@@ -13,12 +13,7 @@ class LeaderBoard extends React.Component{
   render(){
     const { auth, data } = this.props
     console.log(window.location.toString())
-    if(auth){
-      return(
-        <Redirect
-        to='/leaderboard' />
-      )
-    }else{
+    if(auth === null){
       return(
         <Redirect to={{
           pathname: '/loginpage',

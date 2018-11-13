@@ -26,12 +26,7 @@ class NewQuestion extends React.Component{
   render(){
     const { auth } = this.props
     console.log(window.location.toString())
-    if(auth){
-      return(
-        <Redirect
-        to='/add' />
-      )
-    }else{
+    if(auth === null){
       return(
         <Redirect to={{
           pathname: '/loginpage',

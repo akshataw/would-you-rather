@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Loading from 'react-loading-bar';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { handleInitialData } from './actions/shared';
 import FirstPage from './components/FirstPage';
@@ -34,15 +34,17 @@ class App extends Component {
       <div className="App">
        <BrowserRouter>
         <div className="routes">
-         <Route exact path='/' component={FirstPage} />
-         <Route exact path='/ ' component={ErrorPage} />
-         <Route exact path='/loginpage' component={LoginPage} />
-         <Route exact path='/me' component={HomePage} />
-         <Route exact path='/questions/:question_id' component={Details} />
-         <Route exact path='/add' component={NewQuestion} />
-         <Route exact path='/myQuestion' component={MyQuestions} />
-         <Route exact path='/leaderboard' component={LeaderBoard} />
-         <Route exact path='/logout' component={LogoutPage} />
+         <Switch>
+          <Route exact path='/' component={FirstPage} />
+          <Route exact path='/loginpage' component={LoginPage} />
+          <Route exact path='/me' component={HomePage} />
+          <Route exact path='/questions/:question_id' component={Details} />
+          <Route exact path='/add' component={NewQuestion} />
+          <Route exact path='/myQuestion' component={MyQuestions} />
+          <Route exact path='/leaderboard' component={LeaderBoard} />
+          <Route exact path='/logout' component={LogoutPage} />
+          <Route path='*' component={ErrorPage} />
+         </Switch>
         </div>
        </BrowserRouter>
       </div>
