@@ -63,9 +63,14 @@ class LoginPage extends React.Component{
     const { auth } = this.props
 
     if(auth !== null){
+      if(this.props.location.state){
         return(
           <Redirect to={ this.props.location.state.referrer } />
         )
+      }
+      return(
+        <Redirect to='/me' />
+      )    
       }
     return(
       <div className="container">

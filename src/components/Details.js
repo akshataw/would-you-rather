@@ -36,11 +36,12 @@ class Details extends React.Component {
   render(){
     const { question, auth, user, total, percentOne, percentTwo } = this.props
     const { answer } = this.state
-    if(!question){
-      return <ErrorPage />
-    }
+
     if(auth === null){
       return <Redirect to='/loginpage' />
+    }
+    if(!question){
+      return <ErrorPage />
     }
     let classes
     if(answer){

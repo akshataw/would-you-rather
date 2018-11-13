@@ -34,6 +34,11 @@ class NewQuestion extends React.Component{
         }} />
       )
     }
+    if(this.state.redirect){
+      return(
+        <Redirect to='/me' />
+      )
+    }
     return(
       <div className="container">
         <NavBar />
