@@ -10,7 +10,8 @@ class Details extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-      answer: this.props.answer
+      answer: this.props.answer,
+      currentLocation: window.location.pathname
     }
     this.changeMode = this.changeMode.bind(this)
   }
@@ -38,8 +39,14 @@ class Details extends React.Component {
     const { answer } = this.state
 
     if(auth === null){
-      return <Redirect to='/loginpage' />
+      return(
+        <Redirect to={{
+          pathname: '/loginpage',
+          state: { referrer: this.state.currentLocation }
+        }} />
+      )
     }
+    
     if(!question){
       return <ErrorPage />
     }
