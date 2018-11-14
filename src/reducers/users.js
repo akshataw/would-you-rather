@@ -30,7 +30,6 @@ export function users(state = {}, action){
           questions: [...state[action.question.author].questions, action.question.id]
         }
       }
-      break;
     default:
        return state
   }

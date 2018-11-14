@@ -42,19 +42,19 @@ class Questions extends Component {
     }
     return (
       <div>
-       <div className="well" Style="background: #CCD1D1; border: 2px solid #660099; border-radius: 8px;">
+       <div className="well" style={divStyle}>
        <div className="media">
         <div className="media-body">
-         <div className="well well-sm" Style="border: 2px solid black; border-radius: 6px;">
+         <div className="well well-sm" style={divwellStyle}>
           <div className={classes[0]} onClick={() => this.changeOption(1)}>{question.optionOne.text}</div>
          </div>
-         <div className="well well-sm" Style="border: 2px solid black; border-radius: 6px;">
+         <div className="well well-sm" style={wellStyle}>
           <div className={classes[1]} onClick={() => this.changeOption(2)}>{question.optionTwo.text}</div>
          </div>
          </div>
          <div className="media-right">
          <Link to={`/questions/${question.id}`}>
-           <button className="btn btn-success" Style="margin-top:35px; font-size: 30px; margin-right: 30px; margin-left: 20px; border: 2px solid #1E8449; border-radius: 4px;">See</button>
+           <button className="btn btn-success" style={linkStyle}>See</button>
          </Link>
         </div>
        </div>
@@ -62,6 +62,31 @@ class Questions extends Component {
      </div>
     )
   }
+}
+
+const divStyle = {
+  background: "#CCD1D1",
+  border: "2px solid #660099",
+  borderRadius: "8px",
+}
+
+const wellStyle = {
+  border: "2px solid black",
+  borderRadius: "6px",
+}
+
+const linkStyle = {
+  marginTop:"35px",
+  fontSize: "30px",
+  marginRight: "30px",
+  marginLeft: "20px",
+  border: "2px solid #1E8449",
+  borderRadius: "4px",
+}
+
+const divwellStyle = {
+  border: "2px solid black",
+  borderRadius: "6px",
 }
 
 function mapStateToProps ({ auth }) {

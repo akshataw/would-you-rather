@@ -38,6 +38,10 @@ class Details extends React.Component {
     const { question, auth, user, total, percentOne, percentTwo } = this.props
     const { answer } = this.state
 
+    if(!question){
+      return <ErrorPage />
+    }
+
     if(auth === null){
       return(
         <Redirect to={{
@@ -46,10 +50,7 @@ class Details extends React.Component {
         }} />
       )
     }
-    
-    if(!question){
-      return <ErrorPage />
-    }
+
     let classes
     if(answer){
       if(answer === 'optionOne'){
@@ -68,7 +69,7 @@ class Details extends React.Component {
          <NavBar />
        </div>
        <br/>
-       <div className="well" Style="background: #CCD1D1; border: 2px solid #660099; border-radius: 8px;">
+       <div className="well" style={pageStyles}>
         {question && (
           <div>
             <br/>
@@ -99,7 +100,15 @@ class Details extends React.Component {
   }
 }
 
+const pageStyles = {
+  background: "#CCD1D1",
+  border: "2px solid #660099",
+  borderRadius: "8px",
+}
+
 function mapStateToProps({ auth, questions, users }, { match }){
+  const { id } = match.params
+  const questionId = questions[id]
   let question = questions[match.params.question_id]
   let answer, percentOne, percentTwo, total
 

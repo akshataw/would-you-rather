@@ -23,6 +23,7 @@ class NewQuestion extends React.Component{
       redirect: true
     })
   }
+
   render(){
     const { auth } = this.props
     console.log(window.location.toString())
@@ -43,7 +44,7 @@ class NewQuestion extends React.Component{
       <div className="container">
         <NavBar />
         <br/>
-        <center className="well" Style="background: #CCD1D1; border: 2px solid #660099; border-radius: 8px;">
+        <center className="well" style={centerStyle}>
         <div>
          <h1 className="heading">Add Question</h1>
         </div>
@@ -54,13 +55,13 @@ class NewQuestion extends React.Component{
           <div className="input-box">
             <input type="text" className="opt input option-one" placeholder="First Option..." required />
          </div>
-         <h2 Style="margin-left:10px;">OR</h2>
+         <h2 style={{ marginLeft:'10px' }}>OR</h2>
          <div className="input-box">
            <input type="text" className="opt input option-two" placeholder="Second Option..." required />
          </div>
          </div>
          <div className="media-right">
-          <button className="btn btn-success" Style="float: right; margin-top:65px; font-size: 30px; margin-right:200px; width: 100px; border: 2px solid #1E8449; border-radius: 4px;">Add</button>
+          <button className="btn btn-success" style={btnStyle}>Add</button>
          </div>
         </div>
 
@@ -69,6 +70,22 @@ class NewQuestion extends React.Component{
      </div>
     )
   }
+}
+
+const centerStyle = {
+  background: "#CCD1D1",
+  border: "2px solid #660099",
+  borderRadius: "8px",
+}
+
+const btnStyle = {
+  float: "right",
+  marginTop:"65px",
+  fontSize: "30px",
+  marginRight:"200px",
+  width: "100px",
+  border: "2px solid #1E8449",
+  borderRadius: "4px",
 }
 
 function mapStateToProps({auth}){

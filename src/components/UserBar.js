@@ -1,7 +1,7 @@
 import React from 'react';
 
-const UserBar = (props) => {
-  const { user } = props
+const UserBar = ({ user }) => {
+
   return(
     <div className="container">
      <h1>Hello { user.name }</h1>

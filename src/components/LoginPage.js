@@ -70,7 +70,7 @@ class LoginPage extends React.Component{
       }
       return(
         <Redirect to='/me' />
-      )    
+      )
       }
     return(
       <div className="container">
@@ -85,7 +85,7 @@ class LoginPage extends React.Component{
          )}
          <form onSubmit={this.handleLogin}>
           <div className="form-group">
-           <select className="form-control" id="username" Style="height: 40px; width:300px; font-size:20px; font-weight:bolder; border: 2px solid black; border-radius: 8px; align:center;">
+           <select className="form-control" id="username" style={myStyle.formcontrol}>
            <option select="selected">Select your username</option>
            <option>sarahedo</option>
            <option>tylermcginnis</option>
@@ -94,7 +94,7 @@ class LoginPage extends React.Component{
            </div>
           <br/>
           <div className="login-button">
-           <button className="btn btn-success" Style="height:50px; font-size: 25px; margin-bottom:30px;">Submit</button>
+           <button className="btn btn-success" style={myStyle.butn}>Submit</button>
           </div>
          </form>
          </div>
@@ -103,6 +103,23 @@ class LoginPage extends React.Component{
        </div>
       </div>
     )
+  }
+}
+
+const myStyle = {
+  formcontrol: {
+    height: "40px",
+    width:"300px",
+    fontSize:"20px",
+    fontWeight:"bolder",
+    border: "2px solid black",
+    borderRadius: "8px",
+    align:"center",
+  },
+  butn: {
+    height:"50px",
+    fontSize: "25px",
+    marginBottom:"30px",
   }
 }
 

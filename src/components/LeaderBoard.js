@@ -26,10 +26,10 @@ class LeaderBoard extends React.Component{
        <div className="well well-sm">
         <NavBar />
        </div>
-       <div className="well" Style="background: #CCD1D1;">
+       <div className="well" style={{ background: '#CCD1D1' }}>
        <center>
         <h2 className="heading">LeaderBoard
-        <img src="/rank-logo.jpg" alt="rank-logo" Style="height:80px; width:80px; margin-left:30px; border:2px solid #ccd1d1; border-radius:50px;" /></h2>
+        <img src="/rank-logo.jpg" alt="rank-logo" style={myStyle} /></h2>
         </center>
         <br/>
         <table className="table">
@@ -56,6 +56,14 @@ class LeaderBoard extends React.Component{
       </div>
     )
   }
+}
+
+const myStyle = {
+  height:"80px",
+  width:"80px",
+  marginLeft:"30px",
+  border:"2px solid #ccd1d1",
+  borderRadius:"50px",
 }
 
 function mapStateToProps({ auth, users }){

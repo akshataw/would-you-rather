@@ -45,7 +45,7 @@ class HomePage extends React.Component{
         <NavBar />
        <UserBar user={ user } />
        <br/>
-       <div className="questions" Style="float:center;">
+       <div className="questions" style={{ float: 'center' }}>
         <div className="centered">
          <div className="questions-box">
            <div className="buttons">
