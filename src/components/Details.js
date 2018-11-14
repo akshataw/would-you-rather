@@ -38,10 +38,6 @@ class Details extends React.Component {
     const { question, auth, user, total, percentOne, percentTwo } = this.props
     const { answer } = this.state
 
-    if(!question){
-      return <ErrorPage />
-    }
-
     if(auth === null){
       return(
         <Redirect to={{
@@ -49,6 +45,10 @@ class Details extends React.Component {
           state: { referrer: this.state.currentLocation }
         }} />
       )
+    }
+
+    if(!question){
+      return <ErrorPage />
     }
 
     let classes
@@ -112,7 +112,7 @@ function mapStateToProps({ auth, questions, users }, { match }){
   let question = questions[match.params.question_id]
   let answer, percentOne, percentTwo, total
 
-  if(auth !== null){
+  if(auth !== null && question){
     const answers = users[auth].answers
 
     if(answers.hasOwnProperty(question.id)){

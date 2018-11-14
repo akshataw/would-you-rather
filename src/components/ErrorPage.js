@@ -22,8 +22,12 @@ class ErrorPage extends React.Component{
     }
 
     return(
-      <div className="well">
-       <h2>404 Page Not Found!</h2>
+      <div className="container" style={{ paddingTop: '50px'}}>
+       <center>
+        <div>
+         <h2>404 Page Not Found!</h2>
+        </div>
+       </center>
       </div>
     )
   }
